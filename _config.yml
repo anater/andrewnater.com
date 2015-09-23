@@ -11,5 +11,4 @@ github_username:  anater
 # Build settings
 markdown: kramdown
 
-exclude: ['node_modules','css', '_scss','package.json','gruntfile.js']
-keep_files: ['_site/css']
+exclude: ['node_modules','package.json','gruntfile.js']

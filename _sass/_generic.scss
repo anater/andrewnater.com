@@ -13,3 +13,9 @@ Resets, Normalize.css, etc
 	margin: 0;
 	padding: 0;
 }
+
+html{
+	font-family: $font-body;
+	font-size: $font-size;
+	line-height:  $line-height;
+}

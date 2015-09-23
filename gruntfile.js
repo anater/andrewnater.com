@@ -6,38 +6,34 @@ module.exports = function(grunt) {
 
         shell: {
             jekyllBuild: {
-                command: 'jekyll build --watch'
+                command: 'jekyll build'
             },
             jekyllServe: {
                 command: 'jekyll serve'
             }
         },
+        watch: {
+            scripts: {
+                files: ['_sass/*.scss'],
+                tasks: ['sass','autoprefixer', 'cssmin']
+            } 
+        },
         sass: {
             options: {
                 sourceMap: true,
                 relativeAssets: false,
-                outputStyle: 'compressed',
+                outputStyle: 'expand',
                 sassDir: '_sass',
-                cssDir: '_site/css'
+                cssDir: 'css'
             },
             build: {
                 files: [{
                     expand: true,
                     cwd: '_sass/',
                     src: ['**/*.{scss,sass}'],
-                    dest: '_site/css',
+                    dest: 'css',
                     ext: '.css'
                 }]
-            }
-        },
-        concurrent: {
-            serve: [
-                'sass',
-                'watch',
-                'shell:jekyllServe'
-            ],
-            options: {
-                logConcurrentOutput: true
             }
         },
         autoprefixer: {
@@ -46,7 +42,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'css/main.css': 'css/concat.css'
+                    'css/main.css': 'css/main.css'
                 }
             }
         },
@@ -61,30 +57,32 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        watch: {
-            scripts: {
-                files: ['css/*.css','css/*.scss','css/*.sass'],
-                tasks: ['autoprefixer', 'cssmin'],
-                options: {
-                    spawn: false,
-                },
-            } 
+        concurrent: {
+            serve: [
+                'sass',
+                'watch',
+                'shell:jekyllServe'
+            ],
+            options: {
+                logConcurrentOutput: true
+            }
         }
     });
 
     // Task Commands
     grunt.registerTask('serve', [
-        'shell:jekyllServe'
+        'concurrent:serve'
     ]);
 
     // Register the grunt build task
     grunt.registerTask('build', [
         'shell:jekyllBuild',
-        'sass'
+        'sass',
+        'autoprefixer',
+        'cssmin'
     ]);
 
     // Register build as the default task fallback
     grunt.registerTask('default', 'build');
-    // grunt.registerTask('default', ['cssmin', 'autoprefixer', 'watch']);
 
 };
