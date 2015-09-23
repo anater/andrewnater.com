@@ -1,0 +1,15 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../../_sass/main.scss",
+		"../../_sass/_settings.scss",
+		"../../_sass/_tools.scss",
+		"../../_sass/_generic.scss",
+		"../../_sass/_base.scss",
+		"../../_sass/_components.scss",
+		"../../_sass/_trumps.scss"
+	],
+	"mappings": "AGUA,CAAC,AAAA,CACA,UAAU,CAAE,UAAW,CACvB",
+	"names": []
+}

@@ -1,0 +1,23 @@
+/* 
+
+Settings 
+--------
+Globally available settings
+Config switches
+Brand colors, et.
+
+*/
+
+// color //
+$bg-color: #f2f0eb;
+$text-color: #31332e;
+$primary-color: #6b992e;
+
+// size //
+$font-size: 20px;
+$line-height: $font-size * 1.5;
+$spacing-unit: $font-size * 5;
+
+// fonts //
+$title-font: "futura-pt", sans-serif;
+$body-font: "ff-tisa-web-pro", serif;

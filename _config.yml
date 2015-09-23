@@ -1,0 +1,15 @@
+# Site settings
+title: 'Andrew Nater | Branding & Product Design'
+email: hello@andrewnater.com
+description: > # this means to ignore newlines until "baseurl:"
+  I'm Andrew Nater. I love building products and crafting brands.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://andrewnater.com" # the base hostname & protocol for your site
+twitter_username: a_Nater
+github_username:  anater
+
+# Build settings
+markdown: kramdown
+
+exclude: ['node_modules','css', '_scss','package.json','gruntfile.js']
+keep_files: ['_site/css']
