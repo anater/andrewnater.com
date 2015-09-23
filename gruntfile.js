@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
         shell: {
             jekyllBuild: {
-                command: 'jekyll build'
+                command: 'jekyll build --watch'
             },
             jekyllServe: {
                 command: 'jekyll serve'
