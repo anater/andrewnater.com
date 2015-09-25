@@ -1,11 +1,5 @@
 /* 
-
 Settings 
---------
-Globally available settings
-Config switches
-Brand colors, et.
-
 */
 
 // color //
@@ -15,7 +9,7 @@ $primary-color: #6b992e;
 
 // size //
 $font-size: 20px;
-$line-height: $font-size * 1.5;
+$line-height: 1.5em;
 $spacing-unit: $font-size * 5;
 
 // fonts //

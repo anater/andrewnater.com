@@ -1,17 +1,12 @@
 /* 
-
 Generic 
---------
-Ground zero styles
-Low specificity, far reaching
-Resets, Normalize.css, etc
-
 */
 
 *{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	-webkit-font-smoothing:antialiased;
 }
 
 html{

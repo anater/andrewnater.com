@@ -1,12 +1,41 @@
 /* 
-
 Base 
---------
-Unclassed HTML elements
-h1-h6, basic links, lists, etc.
-
 */
+
+body{
+	background: $bg-color;
+	color: $text-color;
+	text-align: center;
+}
+
+main{
+	/* Temp for mobile first styles s*/
+	width: 320px;
+	height: 568px;
+	overflow: auto;
+	margin: 0 auto;
+	border: 1px solid;
+}
+
+header, section, footer{
+	padding-top: 3em;
+}
 
 h1, h2, h3{
 	font-family: $font-title;
+}
+
+ul{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	color: $primary-color;
+	transition: color .3s ease;
+
+	&:hover,
+	&:focus{
+		color: darken($primary-color, 15%);
+	}
 }
