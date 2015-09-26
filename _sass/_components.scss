@@ -23,15 +23,20 @@ Components
 	}
 }
 
-.content-preview{
-	display: none;
+.project-list{
+	> .item{
+		& img{
+			max-width: 100%;
+		}
+	}
 }
 
 .main-footer{
-	padding-bottom: 3em;
+	padding-bottom: 1em;
 
 	> .button{
 		width: 90%;
+		max-width: 300px;
 		margin: 0 auto;
 		padding: .5rem;
 		margin-bottom: 1.5em;
@@ -44,10 +49,12 @@ Components
 		cursor: pointer;
 		border: none;
 		background: linear-gradient(#8ecc3d, #85c138);
-		transition: all .3s ease;
+		box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+		transition: all .3s ease-out;
 
 		&:hover{
-			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+			transform: scale(1.05);
 		}
 	}
 
@@ -61,6 +68,7 @@ Components
 	> .link{
 		display: inline-block;
 		margin-right: 1em;
+		transform-style: flat;
 
 		&:last-child{
 			margin: 0;
@@ -68,11 +76,34 @@ Components
 
 		& a{
 			color: #b5b4b0;
+			display: block;
 			&:hover{
 				opacity: .8;
 			}
 		}
 	}
+}
+
+.content-preview{
+	display: none;
+
+	@include media-query($laptop) {
+    	display: block;
+	}
+}
+
+.project-preview{
+	height: 100vh;
+	position: initial;
+	width: 100%;
+	overflow: hidden;
+}
+
+.img-preview{
+	height: 100vh;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 

@@ -9,12 +9,12 @@ body{
 }
 
 main{
-	/* Temp for mobile first styles s*/
-	width: 320px;
-	height: 568px;
-	overflow: auto;
-	margin: 0 auto;
-	border: 1px solid;
+	@include media-query($laptop) {
+		box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
+		height: 100vh;
+		overflow: scroll;
+		padding: 0 1em;
+	}
 }
 
 header, section, footer{
@@ -32,10 +32,12 @@ ul{
 a{
 	text-decoration: none;
 	color: $primary-color;
-	transition: color .3s ease;
+	transition: all .3s ease;
+	display: inline-block;
 
 	&:hover,
 	&:focus{
 		color: darken($primary-color, 15%);
+		transform: scale(1.15);
 	}
 }
