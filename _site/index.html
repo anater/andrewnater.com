@@ -10,10 +10,8 @@
 ">
 
   <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/site.js"></script>
   <link rel="canonical" href="http://andrewnater.com/">
-
-  <script src="https://use.typekit.net/vhw7mpm.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 
   <body>
@@ -28,17 +26,17 @@
 </header>
 
     <section role="main" class="main-content">
-      <h2 class="header">Some projects I'm proud of</h2>
+      <h2 class="header">Some projects I'm <span class="u-nowrap">proud of</span></h2>
       <p class="subheader">Notes on my process and thinking</p>
       <ul class="project-list">
         <li class="item">
-          <a href="">Fancy Footage Club</a>
+          <a href="" data-item="ffc">Fancy Footage Club</a>
         </li>
         <li class="item">
-          <a href="">HOPE Leadership Academy</a>
+          <a href="" data-item="hla">HOPE Leadership Academy</a>
         </li>
         <li class="item">
-          <a href="">Nater Law Firm</a>
+          <a href="" data-item="nlf">Nater Law Firm</a>
         </li>
       </ul>
     </section>
@@ -73,12 +71,12 @@
 </div>
         <div class="column two-thirds">
   <aside role="complimentary" class="content-preview">
-    <ul class="project-preview">
-      <li class="img-preview" style="background-image: url('../assets/img/hla.preview.jpg');">
+    <ul class="project-preview -ffc">
+      <li class="img-preview -ffc -selected" data-item="ffc">
       </li>
-      <li class="img-preview" style="background-image: url('../assets/img/hla.preview.jpg');">
+      <li class="img-preview -hla" data-item="hla">
       </li>
-      <li class="img-preview" style="background-image: url('../assets/img/hla.preview.jpg');">
+      <li class="img-preview -nlf" data-item="nlf">
       </li>
     </ul>
   </aside>
@@ -87,4 +85,6 @@
     </div>
   </body>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script src="https://use.typekit.net/vhw7mpm.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </html>

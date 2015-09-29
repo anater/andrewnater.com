@@ -78,7 +78,7 @@ Components
 			color: #b5b4b0;
 			display: block;
 			&:hover{
-				opacity: .8;
+				color: darken(#b5b4b0, 15%);
 			}
 		}
 	}
@@ -97,13 +97,45 @@ Components
 	position: initial;
 	width: 100%;
 	overflow: hidden;
+
+	&.-ffc{
+		background-color: #333742;
+	}
+
+	&.-hla{
+		background-color: #b5d96d;
+	}
+
+	&.-nlf{
+		background-color: #217b94;
+	}
 }
 
 .img-preview{
-	height: 100vh;
+	height: 0px;
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+	background-color: inherit;
+	opacity: 0;
+	transition: all .5s ease;
+
+	&.-ffc{
+		background-image: url('../assets/img/ffc.preview.png');
+	}
+
+	&.-hla{
+		background-image: url('../assets/img/hla.preview.png');
+	}
+
+	&.-nlf{
+		background-image: url('../assets/img/nlf.preview.png');
+	}
+
+	&.-selected{
+		height: 100vh;
+		opacity: 1;
+	}
 }
 
 

@@ -146,7 +146,7 @@ Components
     color: #b5b4b0;
     display: block; }
     .links-list > .link a:hover {
-      opacity: .8; }
+      color: #908f89; }
 
 .content-preview {
   display: none; }
@@ -159,13 +159,34 @@ Components
   position: initial;
   width: 100%;
   overflow: hidden; }
+  .project-preview.-ffc {
+    background-color: #333742; }
+  .project-preview.-hla {
+    background-color: #b5d96d; }
+  .project-preview.-nlf {
+    background-color: #217b94; }
 
 .img-preview {
-  height: 100vh;
+  height: 0px;
   background-position: center;
   background-size: contain;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-color: inherit;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+          transition: all 0.5s ease; }
+  .img-preview.-ffc {
+    background-image: url("../assets/img/ffc.preview.png"); }
+  .img-preview.-hla {
+    background-image: url("../assets/img/hla.preview.png"); }
+  .img-preview.-nlf {
+    background-image: url("../assets/img/nlf.preview.png"); }
+  .img-preview.-selected {
+    height: 100vh;
+    opacity: 1; }
 
 /* 
 Trumps & Hacks 
 */
+.u-nowrap {
+  white-space: nowrap; }
