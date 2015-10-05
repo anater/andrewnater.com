@@ -53,9 +53,8 @@ a {
   display: inline-block; }
   a:hover, a:focus {
     color: #425e1c;
-    -webkit-transform: scale(1.15);
-        -ms-transform: scale(1.15);
-            transform: scale(1.15); }
+    -webkit-transform: scale(1.15) translateZ(0);
+            transform: scale(1.15) translateZ(0); }
 
 /* 
 Objects
@@ -114,9 +113,8 @@ Components
     padding: .5rem;
     margin-bottom: 1.5em;
     border-radius: 3px;
-    -webkit-appearance: none;
     font-family: "futura-pt", sans-serif;
-    font-size: 1em;
+    color: #31332e;
     text-transform: uppercase;
     letter-spacing: .15em;
     cursor: pointer;
@@ -158,7 +156,9 @@ Components
   height: 100vh;
   position: initial;
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease; }
   .project-preview.-ffc {
     background-color: #333742; }
   .project-preview.-hla {
@@ -171,10 +171,11 @@ Components
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: inherit;
   opacity: 0;
-  -webkit-transition: all 0.5s ease;
-          transition: all 0.5s ease; }
+  -webkit-transition: .5s ease;
+          transition: .5s ease;
+  -webkit-transition-property: opacity height;
+          transition-property: opacity height; }
   .img-preview.-ffc {
     background-image: url("../assets/img/ffc.preview.png"); }
   .img-preview.-hla {

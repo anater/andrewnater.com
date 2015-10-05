@@ -41,9 +41,8 @@ Components
 		padding: .5rem;
 		margin-bottom: 1.5em;
 		border-radius: 3px;
-		-webkit-appearance: none;
 		font-family: $font-title;
-		font-size: 1em;
+		color: $text-color;
 		text-transform: uppercase;
 		letter-spacing: .15em;
 		cursor: pointer;
@@ -97,6 +96,7 @@ Components
 	position: initial;
 	width: 100%;
 	overflow: hidden;
+	transition: background .3s ease;
 
 	&.-ffc{
 		background-color: #333742;
@@ -117,7 +117,8 @@ Components
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: 0;
-	transition: all .5s ease;
+	transition: .5s ease;
+	transition-property: opacity height;
 
 	&.-ffc{
 		background-image: url('../assets/img/ffc.preview.png');
