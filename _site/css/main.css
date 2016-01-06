@@ -176,6 +176,10 @@ Components
           transition: .5s ease;
   -webkit-transition-property: opacity height;
           transition-property: opacity height; }
+  .img-preview a {
+    display: block;
+    width: 100%;
+    height: 100%; }
   .img-preview.-ffc {
     background-image: url("../assets/img/ffc.preview.png"); }
   .img-preview.-hla {
