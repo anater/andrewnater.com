@@ -104,21 +104,27 @@ Components
 
 	&.-hla{
 		background-color: #b5d96d;
+		> .img-preview{
+			transform: translateY(-100%);
+		}
 	}
 
 	&.-nlf{
 		background-color: #217b94;
+		> .img-preview{
+			transform: translateY(-200%);
+		}
 	}
 }
 
 .img-preview{
-	height: 0px;
+	height: 100vh;
+	opacity: 0;
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
-	opacity: 0;
 	transition: .5s ease;
-	transition-property: opacity height;
+	transition-property: opacity, transform;
 
 	& a{
 		display: block;
@@ -139,9 +145,9 @@ Components
 	}
 
 	&.-selected{
-		height: 100vh;
 		opacity: 1;
 	}
+	
 }
 
 

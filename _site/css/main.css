@@ -163,19 +163,27 @@ Components
     background-color: #333742; }
   .project-preview.-hla {
     background-color: #b5d96d; }
+    .project-preview.-hla > .img-preview {
+      -webkit-transform: translateY(-100%);
+          -ms-transform: translateY(-100%);
+              transform: translateY(-100%); }
   .project-preview.-nlf {
     background-color: #217b94; }
+    .project-preview.-nlf > .img-preview {
+      -webkit-transform: translateY(-200%);
+          -ms-transform: translateY(-200%);
+              transform: translateY(-200%); }
 
 .img-preview {
-  height: 0px;
+  height: 100vh;
+  opacity: 0;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0;
   -webkit-transition: .5s ease;
           transition: .5s ease;
-  -webkit-transition-property: opacity height;
-          transition-property: opacity height; }
+  -webkit-transition-property: opacity, -webkit-transform;
+          transition-property: opacity, transform; }
   .img-preview a {
     display: block;
     width: 100%;
@@ -187,7 +195,6 @@ Components
   .img-preview.-nlf {
     background-image: url("../assets/img/nlf.preview.png"); }
   .img-preview.-selected {
-    height: 100vh;
     opacity: 1; }
 
 /* 
