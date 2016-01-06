@@ -6,6 +6,10 @@ window.onload = function(){
 	var previewItems = projectPreview.querySelectorAll(".img-preview");
 
 	for (var i = 0; i < listItems.length; i++) {
+		listItems[i].querySelector('a').addEventListener('click', function(){
+			ga('send', 'event', 'Project', 'click', this.getAttribute("data-item"));
+		});
+
 		listItems[i].querySelector('a').addEventListener('mouseenter', function(){
 			var projectCode = this.getAttribute("data-item");
 			for (var i = 0; i < previewItems.length; i++) {

@@ -9,10 +9,12 @@ window.onload = function(){
 		listItems[i].querySelector('a').addEventListener('click', function(){
 			ga('send', 'event', 'Project', 'click', this.getAttribute("data-item"));
 		});
+
 		listItems[i].querySelector('a').addEventListener('mouseenter', function(){
 			var projectCode = this.getAttribute("data-item");
 			for (var i = 0; i < previewItems.length; i++) {
 				var previewCode = previewItems[i].getAttribute("data-item");
+				console.log(previewCode);
 				if(previewCode == projectCode){
 					previewItems[i].classList.add("-selected");
 					projectPreview.classList.add("-" + String(previewCode));
