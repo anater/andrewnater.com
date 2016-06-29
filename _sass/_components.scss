@@ -100,21 +100,28 @@ Components
 	overflow: hidden;
 	transition: background .3s ease;
 
+    &.-cs{
+        background-color: #9edbe4;
+    }
+
 	&.-ffc{
 		background-color: #333742;
+        > .img-preview{
+			transform: translateY(-100%);
+		}
 	}
 
 	&.-hla{
 		background-color: #b5d96d;
 		> .img-preview{
-			transform: translateY(-100%);
+			transform: translateY(-200%);
 		}
 	}
 
 	&.-nlf{
 		background-color: #217b94;
 		> .img-preview{
-			transform: translateY(-200%);
+			transform: translateY(-300%);
 		}
 	}
 }
@@ -133,6 +140,10 @@ Components
 		width: 100%;
 		height: 100%;
 	}
+
+    &.-cs{
+        background-image: url('../assets/img/cs.preview.png');
+    }
 
 	&.-ffc{
 		background-image: url('../assets/img/ffc.preview.png');

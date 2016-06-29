@@ -161,20 +161,26 @@ Components
   overflow: hidden;
   -webkit-transition: background 0.3s ease;
           transition: background 0.3s ease; }
+  .project-preview.-cs {
+    background-color: #9edbe4; }
   .project-preview.-ffc {
     background-color: #333742; }
-  .project-preview.-hla {
-    background-color: #b5d96d; }
-    .project-preview.-hla > .img-preview {
+    .project-preview.-ffc > .img-preview {
       -webkit-transform: translateY(-100%);
           -ms-transform: translateY(-100%);
               transform: translateY(-100%); }
-  .project-preview.-nlf {
-    background-color: #217b94; }
-    .project-preview.-nlf > .img-preview {
+  .project-preview.-hla {
+    background-color: #b5d96d; }
+    .project-preview.-hla > .img-preview {
       -webkit-transform: translateY(-200%);
           -ms-transform: translateY(-200%);
               transform: translateY(-200%); }
+  .project-preview.-nlf {
+    background-color: #217b94; }
+    .project-preview.-nlf > .img-preview {
+      -webkit-transform: translateY(-300%);
+          -ms-transform: translateY(-300%);
+              transform: translateY(-300%); }
 
 .img-preview {
   height: 100vh;
@@ -190,6 +196,8 @@ Components
     display: block;
     width: 100%;
     height: 100%; }
+  .img-preview.-cs {
+    background-image: url("../assets/img/cs.preview.png"); }
   .img-preview.-ffc {
     background-image: url("../assets/img/ffc.preview.png"); }
   .img-preview.-hla {
