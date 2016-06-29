@@ -48,11 +48,13 @@ ul {
 a {
   text-decoration: none;
   color: #6b992e;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
   display: inline-block; }
   a:hover, a:focus {
     color: #425e1c;
-    transform: scale(1.15) translateZ(0); }
+    -webkit-transform: scale(1.15) translateZ(0);
+            transform: scale(1.15) translateZ(0); }
 
 /* 
 Objects
@@ -81,14 +83,16 @@ Objects
       .container > .row > .column.flow-opposite {
         float: right; } }
 
-/* 
+/*
 Components
 */
 .main-header > .title {
-  font-size: 1.5em; }
+  font-size: 1.5rem;
+  line-height: 1.5em; }
 
 .main-header > .subtitle, .main-header .cta {
-  font-size: .75em; }
+  font-size: .75rem;
+  line-height: 1.3em; }
 
 .main-content > .header {
   font-size: 1em; }
@@ -117,12 +121,16 @@ Components
     letter-spacing: .15em;
     cursor: pointer;
     border: none;
+    background: -webkit-linear-gradient(#8ecc3d, #85c138);
     background: linear-gradient(#8ecc3d, #85c138);
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-out; }
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out; }
     .main-footer > .button:hover {
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-      transform: scale(1.05); }
+      -webkit-transform: scale(1.05);
+          -ms-transform: scale(1.05);
+              transform: scale(1.05); }
   .main-footer > p {
     font-size: .625em;
     color: #b5b4b0; }
@@ -130,7 +138,8 @@ Components
 .links-list > .link {
   display: inline-block;
   margin-right: 1em;
-  transform-style: flat; }
+  -webkit-transform-style: flat;
+          transform-style: flat; }
   .links-list > .link:last-child {
     margin: 0; }
   .links-list > .link a {
@@ -150,17 +159,22 @@ Components
   position: initial;
   width: 100%;
   overflow: hidden;
-  transition: background 0.3s ease; }
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease; }
   .project-preview.-ffc {
     background-color: #333742; }
   .project-preview.-hla {
     background-color: #b5d96d; }
     .project-preview.-hla > .img-preview {
-      transform: translateY(-100%); }
+      -webkit-transform: translateY(-100%);
+          -ms-transform: translateY(-100%);
+              transform: translateY(-100%); }
   .project-preview.-nlf {
     background-color: #217b94; }
     .project-preview.-nlf > .img-preview {
-      transform: translateY(-200%); }
+      -webkit-transform: translateY(-200%);
+          -ms-transform: translateY(-200%);
+              transform: translateY(-200%); }
 
 .img-preview {
   height: 100vh;
@@ -168,8 +182,10 @@ Components
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transition: .5s ease;
-  transition-property: opacity, transform; }
+  -webkit-transition: .5s ease;
+          transition: .5s ease;
+  -webkit-transition-property: opacity, -webkit-transform;
+          transition-property: opacity, transform; }
   .img-preview a {
     display: block;
     width: 100%;
@@ -188,5 +204,3 @@ Trumps & Hacks
 */
 .u-nowrap {
   white-space: nowrap; }
-
-/*# sourceMappingURL=main.css.map */

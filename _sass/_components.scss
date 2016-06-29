@@ -1,13 +1,15 @@
-/* 
+/*
 Components
 */
 
 .main-header{
 	> .title{
-		font-size: 1.5em;
+		font-size: 1.5rem;
+        line-height: 1.5em;
 	}
 	> .subtitle, .cta{
-		font-size: .75em;
+		font-size: .75rem;
+        line-height: 1.3em;
 	}
 }
 
@@ -147,10 +149,5 @@ Components
 	&.-selected{
 		opacity: 1;
 	}
-	
+
 }
-
-
-
-
-
