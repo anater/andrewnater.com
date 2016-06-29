@@ -1,0 +1,20 @@
+/* 
+Generic 
+*/
+
+*, *:before, *:after{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing:antialiased;
+}
+
+html{
+	font-family: $font-body;
+	font-size: $font-size;
+	line-height:  $line-height;
+
+	@include media-query($tablet) {
+    	font-size: $font-size * 1.1;
+	}
+}

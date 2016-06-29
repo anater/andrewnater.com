@@ -1,0 +1,43 @@
+/* 
+Base 
+*/
+
+body{
+	background: $bg-color;
+	color: $text-color;
+	text-align: center;
+}
+
+main{
+	@include media-query($laptop) {
+		box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
+		height: 100vh;
+		overflow: scroll;
+		padding: 0 1em;
+	}
+}
+
+header, section, footer{
+	padding-top: 3em;
+}
+
+h1, h2, h3{
+	font-family: $font-title;
+}
+
+ul{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+	color: $primary-color;
+	transition: all .3s ease;
+	display: inline-block;
+
+	&:hover,
+	&:focus{
+		color: darken($primary-color, 15%);
+		transform: scale(1.15) translateZ(0);
+	}
+}
