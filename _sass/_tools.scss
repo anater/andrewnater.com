@@ -1,16 +1,57 @@
-/* 
+/*
 Tools
 */
 
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+// MEDIA QUERIES
 @mixin media-query($device) {
     @media screen and (min-width: $device) {
         @content;
+    }
+}
+
+// ANIMATIONS
+
+@keyframes wave {
+    0%, 5%, 10%, 15%, 20%{
+        transform: rotate(0deg);
+    }
+
+    3%, 8%, 13%, 18%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes swing {
+    0%, 100%{
+        transform: rotate(-5deg);
+    }
+
+    50%{
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes fly-out {
+
+    2%{
+        transform: rotate(2deg) translateX(-5%);
+    }
+
+    5%{
+        opacity: 1;
+    }
+
+    10%{
+        transform: rotate(-5deg) translateX(500%) translateY(-5%);
+        opacity: 0;
+    }
+
+    11%{
+        transform: translateY(-5%);
+    }
+
+    50%{
+        transform: none;
+        opacity: 1;
     }
 }
