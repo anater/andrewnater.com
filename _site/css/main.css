@@ -4,26 +4,31 @@ Settings
 /*
 Tools
 */
-@-webkit-keyframes wave {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  50% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg); }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
 @keyframes wave {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+  0%, 5%, 10%, 15%, 20% {
+    transform: rotate(0deg); }
+  3%, 8%, 13%, 18% {
+    transform: rotate(10deg); } }
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-5deg); }
   50% {
-    -webkit-transform: rotate(10deg);
-            transform: rotate(10deg); }
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); } }
+    transform: rotate(5deg); } }
+
+@keyframes fly-out {
+  2% {
+    transform: rotate(2deg) translateX(-5%); }
+  5% {
+    opacity: 1; }
+  10% {
+    transform: rotate(-5deg) translateX(500%) translateY(-5%);
+    opacity: 0; }
+  11% {
+    transform: translateY(-5%); }
+  50% {
+    transform: none;
+    opacity: 1; } }
 
 /*
 Generic
@@ -61,13 +66,20 @@ html {
   color: #31332e; }
 
 .animate-wave {
-  -webkit-animation: wave ease-in-out 0.3s 3;
-          animation: wave ease-in-out 0.3s 3;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-  -webkit-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-          transform-origin: bottom right; }
+  animation: wave ease 5s infinite;
+  animation-delay: 1s;
+  transform-origin: bottom right; }
+
+.animate-swing {
+  animation: swing ease 1.5s infinite;
+  transform-origin: top center; }
+
+.animate-fly-out {
+  animation: fly-out ease 10s infinite;
+  transform-origin: bottom center;
+  animation-delay: 5s; }
 
 a {
   border-bottom: .125em solid #cae1ad; }
+
+/*# sourceMappingURL=main.css.map */

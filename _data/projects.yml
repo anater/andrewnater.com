@@ -1,19 +1,26 @@
-- name: TRIP Pattern Library 
-  url: # /trip-pattern-library
-  code_url:
-
-- name: Beer Goggles
-  url: http://andrewnater.com/BeerGoggles
-  code_url:
+# TODO: get a version of this project online
+# - name: TRIP Pattern Library
+#   subtitle: SASS Framework for Wyndham Vacation Ownership
+#   url: # /trip-pattern-library
+#   code_url:
 
 - name: Catalyst Spaces
+  subtitle: Client website with Trim Media
   url: http://catalystspaces.com
-  code_url:
+  code_url: https://github.com/TrimMedia/catalyst-website
+
+- name: Beer Goggles
+  subtitle: Personal web app
+  url: http://andrewnater.com/BeerGoggles
+  code_url: https://github.com/anater/BeerGoggles
 
 - name: Wellness
-  url: http://getwellness.com
-  code_url:
+  subtitle: Website & iOS app with Anchorshed
+  url: http://getwellness.co
+# TODO: get a public code url
+  # code_url: https://github.com/anchorshed/wellness-website
 
 - name: Fancy Footage Club
+  subtitle: Web app with Trim Media
   url: http://fancyfootage.com
-  code_url:
+  code_url: https://github.com/TrimMedia/fancyfootageclub

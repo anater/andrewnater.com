@@ -18,11 +18,26 @@
     color: #31332e;
 }
 
+// ANIMATIONS
+
 .animate-wave{
-    animation: wave ease-in-out .3s 3;
+    animation: wave ease 5s infinite;
     animation-delay: 1s;
     transform-origin: bottom right;
 }
+
+.animate-swing{
+    animation: swing ease 1.5s infinite;
+    transform-origin: top center;
+}
+
+.animate-fly-out{
+    animation: fly-out ease 10s infinite;
+    transform-origin: bottom center;
+    animation-delay: 5s;
+}
+
+// TAG STYLES
 
 a{
     border-bottom: .125em solid #cae1ad;

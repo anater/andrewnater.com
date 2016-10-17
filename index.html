@@ -15,19 +15,34 @@ layout: default
         </p>
     </header>
     <section role="main">
-        <h2 class="mt4 f4 lh-title futura">Recent Work 💼</h2>
+        <h2 class="mt4 f4 lh-title futura">
+            Recent Projects
+            <span class="dib animate-swing">💼</span>
+        </h2>
         <ul class="list mt1">
         {% for project in site.data.projects %}
             <li class="mt2">
                 <a class="link green hover-bg-washed-green dib" href="{{ project.url }}" title="{{ link.title }}" target="_blank">
                     {{ project.name }}
                 </a>
+                {% if project.code_url%}
+                    <small class="ttu futura tracked">
+                        <a class="link black-30 b--black-10 dib ml1" href="{{ project.code_url }}" title="View the code for {{ project.name }}" target="_blank">Code</a>
+                    </small>
+                {% endif %}
+                <!-- TODO: determine whether this should be in here... -->
+                <!-- <p class='f6 black-50 lh-title'>
+                    <small>{{ project.subtitle }}</small>
+                </p> -->
             </li>
         {% endfor %}
         </ul>
     </section>
     <footer class="mt4 mb2 f6 measure-narrow">
-        <h3 class="f4 lh-title futura">Contact 🌎</h3>
+        <h3 class="f4 lh-title futura">
+            Contact
+            <span class="dib animate-fly-out">✉️</span>
+        </h3>
         <p class="mv2 lh-copy">I'm interested in designing delightful and usable software for the web. If you'd like to work together, get in touch!</p>
         <div class="green mt2">
         {% for link in site.data.links %}
