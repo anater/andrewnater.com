@@ -9,7 +9,7 @@ layout: default
         </h1>
         <p>
             I’m a multi-disciplinary designer with a background in responsive web development, user experience, and digital marketing.
-            <a class="link green hover-bg-washed-green dib" href="{{ site.resume }}" title="Andrew Nater's Résumé [PSD]">
+            <a class="link green hover-bg-washed-green dib bg-animate" href="{{ site.resume }}" title="Andrew Nater's Résumé [PSD]">
                 Check out my résumé!
             </a>
         </p>
@@ -22,7 +22,7 @@ layout: default
         <ul class="list mt1">
         {% for project in site.data.projects %}
             <li class="mt2">
-                <a class="link green hover-bg-washed-green dib" href="{{ project.url }}" title="{{ link.title }}" target="_blank">
+                <a class="link green hover-bg-washed-green bg-animate dib" href="{{ project.url }}" title="{{ link.title }}" target="_blank">
                     {{ project.name }}
                 </a>
                 {% if project.code_url%}
@@ -46,7 +46,7 @@ layout: default
         <p class="mv2 lh-copy">I'm interested in designing delightful and usable software for the web. If you'd like to work together, get in touch!</p>
         <div class="green mt2">
         {% for link in site.data.links %}
-            <a class="link mr2 green hover-bg-washed-green dib" href="{{ link.url }}" title="{{ link.title }}" target="_blank">
+            <a class="link mr2 green hover-bg-washed-green dib bg-animate" href="{{ link.url }}" title="{{ link.title }}" target="_blank">
                 {{ link.name }}
             </a>
         {% endfor %}
