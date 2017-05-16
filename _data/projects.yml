@@ -1,3 +1,7 @@
+- name: Hitlist
+  deliverable: Website
+  url: http://hitlistapp.com
+
 - name: Catalyst Spaces
   deliverable: Website
   url: http://trim.media/catalyst-website/
@@ -9,7 +13,7 @@
 #   code_url: https://github.com/anater/BeerGoggles
 
 - name: Wellness
-  deliverable: Website & iOS App
+  deliverable: Website & iOS app
   url: http://getwellness.co
   # code_url: https://github.com/anchorshed/wellness-website # TODO: get a public code url
 
