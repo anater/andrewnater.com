@@ -1,7 +1,11 @@
 - name: Wandertab
   deliverable: Chrome Extension
   url: http://hitlistapp.com/wandertab
-
+  
+- name: Wellness
+  deliverable: Website & iOS app
+  url: http://getwellness.co
+  
 - name: Hitlist
   deliverable: Website
   url: http://hitlistapp.com
@@ -9,17 +13,6 @@
 - name: Catalyst Spaces
   deliverable: Website
   url: http://trim.media/catalyst-website/
-  code_url: https://github.com/TrimMedia/catalyst-website
-
-# - name: Beer Goggles
-#   scope: Personal web app
-#   url: http://andrewnater.com/BeerGoggles
-#   code_url: https://github.com/anater/BeerGoggles
-
-- name: Wellness
-  deliverable: Website & iOS app
-  url: http://getwellness.co
-  # code_url: https://github.com/anchorshed/wellness-website # TODO: get a public code url
 
 - name: Fancy Footage Club
   deliverable: Web app
@@ -29,4 +22,7 @@
 - name: Trim Media LLC
   deliverable: Website
   url: http://trim.Media
-  code_url: https://github.com/TrimMedia/trimmedia.github.io
+  
+# - name: Beer Goggles
+#   scope: Personal web app
+#   url: http://andrewnater.com/BeerGoggles
