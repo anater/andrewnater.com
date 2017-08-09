@@ -1,3 +1,7 @@
+- name: Wandertab
+  deliverable: Chrome Extension
+  url: http://hitlistapp.com/wandertab
+
 - name: Hitlist
   deliverable: Website
   url: http://hitlistapp.com
