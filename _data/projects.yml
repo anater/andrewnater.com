@@ -1,27 +1,19 @@
-- name: Wandertab
-  deliverable: Chrome Extension
-  url: http://hitlistapp.com/wandertab
-  
 - name: Wellness
-  deliverable: Website & iOS app
+  deliverable: Website design & development / iOS App design
   url: http://getwellness.co
-  
-- name: Hitlist
-  deliverable: Website
-  url: http://hitlistapp.com
+
+- name: Wandertab
+  deliverable: Chrome Extension design & development
+  url: http://hitlistapp.com/wandertab
+
+- name: Hitlist for Android
+  deliverable: Android App design
+  url: https://play.google.com/store/apps/details?id=com.hitlistapp.android
 
 - name: Catalyst Spaces
-  deliverable: Website
+  deliverable: Website design & development
   url: http://trim.media/catalyst-website/
 
 - name: Fancy Footage Club
-  deliverable: Web app
+  deliverable: Website design & development
   url: http://fancyfootage.com
-
-- name: Trim Media LLC
-  deliverable: Website
-  url: http://trim.Media
-  
-# - name: Beer Goggles
-#   scope: Personal web app
-#   url: http://andrewnater.com/BeerGoggles
