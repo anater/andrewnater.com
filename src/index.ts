@@ -3,7 +3,7 @@ import { createElement } from "react";
 import * as ReactDOMServer from "react-dom/server";
 import * as fs from "fs";
 
-import generateHtml from "./build/generateHtml";
+import generateHtml from "./helpers/generateHtml";
 import App from "./App";
 
 // initialize Contentful client
