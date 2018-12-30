@@ -4,8 +4,8 @@
   "description": "My personal website",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc",
-    "start": "node dist/index",
+    "wacth": "tsc -w",
+    "start": "tsc && node dist/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,9 +20,18 @@
   },
   "homepage": "https://github.com/anater/anater.github.io#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "contentful": "^7.0.5",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0",
     "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.10",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-helmet": "^5.0.7"
   }
 }
