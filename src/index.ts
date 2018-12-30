@@ -15,6 +15,8 @@ const client = Contentful.createClient({
   host: "preview.contentful.com"
 });
 
+console.log("ℹ️ Fetching Data...");
+
 client
   .getEntries({
     content_type: "page"
@@ -24,6 +26,7 @@ client
 function processPages(response: Contentful.EntryCollection<any>) {
   const pages = response.items;
 
+  console.log("ℹ️ Rendering pages...");
   pages.map(({ fields }) => {
     // render page
     const Component = createElement(App, fields);
