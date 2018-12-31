@@ -19,7 +19,8 @@ console.log("ℹ️ Fetching Data...");
 
 client
   .getEntries({
-    content_type: "page"
+    content_type: "page",
+    include: 3,
   })
   .then(processPages);
 
