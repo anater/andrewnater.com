@@ -2,7 +2,12 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 
 // inspired by tachyons type scale
-const fontSizes = [0.875, 1, 1.25, 1.5, 2.25, 3, 5, 6].map(size => `${size}rem`);
+const fontSizes = [0.875, 1, 1.25, 1.5, 2.25, 3, 5, 6].map(
+  size =>
+    `
+      font-size: ${size}rem;
+    `
+);
 
 const headingMargins = css`
   margin: unset;
@@ -26,6 +31,16 @@ export const GlobalStyles = css`
     h3 {
       ${headingMargins}
     }
+
+    h1 {
+      ${fontSizes[4]}
+      line-height: 1;
+    }
+
+    h2 {
+      ${fontSizes[3]};
+      line-height: 1.25;
+    }
     
     a {
       text-decoration: none;
@@ -43,21 +58,6 @@ export const GlobalStyles = css`
         opacity: 0.6;
       }
     }
-`;
-
-export const Title = styled.h1`
-  font-size: ${fontSizes[4]};
-  line-height: 1;
-`;
-
-export const Heading = styled.h2`
-  font-size: ${fontSizes[3]};
-  line-height: 1.25;
-`;
-
-export const Body = styled.p`
-  font-size: ${fontSizes[1]};
-  line-height: 1.5;
 `;
 
 export const Small = styled.small`

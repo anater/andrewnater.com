@@ -3,7 +3,7 @@ import * as Contentful from "contentful";
 import styled from "@emotion/styled";
 import { Global } from "@emotion/core";
 
-import { Title, Heading, Body, Small, GlobalStyles } from "../components/Styled";
+import { Small, GlobalStyles } from "../components/Styled";
 import Markdown from "../components/Markdown";
 
 interface Props {
@@ -15,10 +15,15 @@ interface ContentItem {
   fields: any;
 }
 
-const MainStyled = styled.main`
+const Main = styled.main`
   width: 90%;
   max-width: 34em;
   margin: 0 auto;
+`;
+
+const Footer = styled.footer`
+  margin: 4rem 0;
+  text-align: center;
 `;
 
 export default class Default extends React.PureComponent<Props> {
@@ -29,12 +34,12 @@ export default class Default extends React.PureComponent<Props> {
     return (
       <>
         <Global styles={GlobalStyles} />
-        <MainStyled>
+        <Main>
           {content.length > 0 && content.map(this.renderContentItem)}
-          <footer className="f6 mb5">
+          <Footer>
             <Small>Copyright Andrew Nater {year}</Small>
-          </footer>
-        </MainStyled>
+          </Footer>
+        </Main>
       </>
     );
   }
@@ -48,26 +53,26 @@ export default class Default extends React.PureComponent<Props> {
         // render text
         return (
           <section key={id}>
-            {fields.showTitle && <Title>{fields.title}</Title>}
+            {fields.showTitle && <h1>{fields.title}</h1>}
             <Markdown content={fields.body} />
-          </section>
-        );
-      case "page":
-        // render page
-        return (
-          <section key={id}>
-            <Heading>
-              <a href={fields.slug}>{fields.title}</a>
-            </Heading>
-            <Body>{fields.description}</Body>
           </section>
         );
       case "group":
         // render group
         return (
           <section key={id}>
-            {fields.showTitle && <Title>{fields.title}</Title>}
+            {fields.showTitle && <h1>{fields.title}</h1>}
             {fields.items && fields.items.map(this.renderContentItem)}
+          </section>
+        );
+      case "page":
+        // render page
+        return (
+          <section key={id}>
+            <h2>
+              <a href={fields.slug}>{fields.title}</a>
+            </h2>
+            <p>{fields.description}</p>
           </section>
         );
       default:
