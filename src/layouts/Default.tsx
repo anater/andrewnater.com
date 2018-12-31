@@ -38,6 +38,14 @@ export default class Default extends React.PureComponent<Props> {
             <Markdown content={fields.body} />
           </section>
         );
+      case "page":
+        // render page
+        return (
+          <section key={id}>
+            <h2><a href={fields.slug}>{fields.title}</a></h2>
+            <p>{fields.description}</p>
+          </section>
+        )
       case "group":
         // render group
         return (
