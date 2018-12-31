@@ -17,7 +17,6 @@ export default class App extends React.PureComponent<any> {
     <Helmet>
       <title>{this.props.title}</title>
       <meta name="description" content={this.props.description} />
-      <body className="sans-serif" />
     </Helmet>
   );
 
