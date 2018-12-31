@@ -20,7 +20,7 @@ console.log("ℹ️ Fetching Data...");
 client
   .getEntries({
     content_type: "page",
-    include: 3,
+    include: 3
   })
   .then(processPages);
 
@@ -28,30 +28,29 @@ function processPages(response: Contentful.EntryCollection<any>) {
   const pages = response.items;
 
   console.log("ℹ️ Rendering pages...");
+
   pages.map(({ fields }) => {
     // render page
     const Component = createElement(App, fields);
     const markup = ReactDOMServer.renderToStaticMarkup(Component);
     const html = generateHtml(markup);
     // save page to disk
-    savePageToDisk({ slug: fields.slug, html });
+    savePageToDisk(fields.slug, html);
   });
 }
 
-function savePageToDisk(page: any) {
-  const path = `${__dirname}/../public${page.slug}`;
-  const saveFile = () => fs.writeFile(`${path}/index.html`, page.html, writeFileErrror => {
+function savePageToDisk(location: string, html: string) {
+  const path = `${__dirname}/../public${location}`;
+  const pathExists = fs.existsSync(path);
+    
+  // if the path doesn't exist, create it
+  if (pathExists === false) {
+    fs.mkdirSync(path, { recursive: true });
+  }
+
+  // create file at path
+  fs.writeFile(`${path}/index.html`, html, writeFileErrror => {
     if (writeFileErrror) throw writeFileErrror;
     console.log(`✅ Saved: ${path}`);
   });
-  // if we already have this directory, save
-  if (fs.existsSync(path)) {
-    saveFile();
-  } else {
-    // make the directory, then save
-    fs.mkdir(path, { recursive: true }, (mkDirError) => {
-      if (mkDirError) throw mkDirError;
-      saveFile();
-    });
-  }
 }
