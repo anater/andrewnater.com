@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/anater/anater.github.io#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.5",
+    "@emotion/styled": "^10.0.5",
     "cheerio": "^1.0.0-rc.2",
     "contentful": "^7.0.5",
     "markdown-it": "^8.4.2",
