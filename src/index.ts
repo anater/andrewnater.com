@@ -2,6 +2,8 @@ import * as Contentful from "contentful";
 import { createElement } from "react";
 import * as ReactDOMServer from "react-dom/server";
 import * as fs from "fs";
+import * as path from "path";
+import * as mkdirp from "mkdirp";
 
 import generateHtml from "./helpers/generateHtml";
 import App from "./App";
@@ -9,10 +11,8 @@ import App from "./App";
 // initialize Contentful client
 const client = Contentful.createClient({
   space: "yf1oyadbtzfa",
-  // using preview access token
-  // TODO: replace with environment variables
-  accessToken: "73c71d01c6beec2d19998b895b82c6e0e10eb05f070f9115b5e4c57afff3ee6a",
-  host: "preview.contentful.com"
+  accessToken: "17aa7d1318523a90b15310571fdf467fb16049a2d4eaa9aa1bcca9bfc88d2b18"
+  // host: "preview.contentful.com"
 });
 
 console.log("ℹ️ Fetching Data...");
@@ -22,14 +22,15 @@ client
     content_type: "page",
     include: 3
   })
-  .then(processPages);
+  .then(processPages)
+  .catch(console.error);
 
 function processPages(response: Contentful.EntryCollection<any>) {
   const pages = response.items;
 
   console.log("ℹ️ Rendering pages...");
 
-  pages.map(({ fields }) => {
+  pages.forEach(({ fields }) => {
     // render page
     const Component = createElement(App, fields);
     const markup = ReactDOMServer.renderToStaticMarkup(Component);
@@ -40,17 +41,17 @@ function processPages(response: Contentful.EntryCollection<any>) {
 }
 
 function savePageToDisk(location: string, html: string) {
-  const path = `${__dirname}/../public${location}`;
-  const pathExists = fs.existsSync(path);
-    
+  // public path is one above
+  const locationPath = path.join(__dirname, "..", `public${location}`);
+  const pathExists = fs.existsSync(locationPath);
+  console.log({ locationPath, pathExists });
   // if the path doesn't exist, create it
   if (pathExists === false) {
-    fs.mkdirSync(path, { recursive: true });
+    mkdirp.sync(locationPath);
   }
-
   // create file at path
-  fs.writeFile(`${path}/index.html`, html, writeFileErrror => {
+  fs.writeFile(`${locationPath}/index.html`, html, writeFileErrror => {
     if (writeFileErrror) throw writeFileErrror;
-    console.log(`✅ Saved: ${path}`);
+    else console.log(`✅ Saved: ${location}`);
   });
 }
