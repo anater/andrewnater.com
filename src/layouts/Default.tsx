@@ -2,12 +2,14 @@ import * as React from "react";
 import * as Contentful from "contentful";
 import styled from "@emotion/styled";
 import { Global } from "@emotion/core";
+import { format } from "date-fns";
 
 import { Small, GlobalStyles } from "../components/Styled";
 import Markdown from "../components/Markdown";
 
 interface Props {
   content: Array<ContentItem>;
+  type: String;
 }
 
 interface ContentItem {
@@ -21,6 +23,20 @@ const Main = styled.main`
   margin: 0 auto;
 `;
 
+const Header = styled.header`
+  margin: 3rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    border-bottom: none;
+    mix-blend-mode: unset;
+    font-size: 1.5rem;
+  }
+`;
+
 const Footer = styled.footer`
   margin: 4rem 0;
   text-align: center;
@@ -31,10 +47,19 @@ export default class Default extends React.PureComponent<Props> {
     const { content } = this.props;
     const date = new Date();
     const year = date.getFullYear();
+
     return (
       <>
         <Global styles={GlobalStyles} />
         <Main>
+          <Header>
+            <Small>Andrew Nater</Small>
+            <nav>
+              <a href="/" title="Go to the homepage">
+                🏠
+              </a>
+            </nav>
+          </Header>
           {content.length > 0 && content.map(this.renderContentItem)}
           <Footer>
             <Small>Copyright Andrew Nater {year}</Small>
@@ -54,6 +79,7 @@ export default class Default extends React.PureComponent<Props> {
         return (
           <section key={id}>
             {fields.showTitle && <h1>{fields.title}</h1>}
+            {this.props.type === "Post" && this.getDate(sys)}
             <Markdown content={fields.body} />
           </section>
         );
@@ -78,5 +104,15 @@ export default class Default extends React.PureComponent<Props> {
       default:
         return false;
     }
+  };
+
+  getDate = (sys: Contentful.Sys) => {
+    const { createdAt } = sys;
+    const formattedDate = format(createdAt, "MMMM D, YYYY");
+    return (
+      <Small>
+        <time>{formattedDate}</time>
+      </Small>
+    );
   };
 }

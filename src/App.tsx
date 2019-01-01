@@ -22,11 +22,6 @@ export default class App extends React.PureComponent<any> {
 
   renderPage = () => {
     const { type, content } = this.props;
-    // choose layout
-    switch (type) {
-      case "Default":
-      default:
-        return <Default content={content} />;
-    }
+    return <Default type={type} content={content} />;
   };
 }
