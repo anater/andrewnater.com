@@ -25,12 +25,16 @@ const fadeIn = keyframes`
 `;
 
 export const GlobalStyles = css`
+  html {
+    height: 100%;
+    background: linear-gradient(to bottom right, #262362, #41bfaf);
+  }
+
   body {
     ${sansSerif}
     ${fontSizes[1]};
     line-height: 1.5;
     color: rgba(255, 250, 250, 1);
-    background: linear-gradient(to bottom right, #262362, #41bfaf);
   }
 
   h1,
