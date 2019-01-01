@@ -20,44 +20,44 @@ const sansSerif = css`
 `;
 
 export const GlobalStyles = css`
-    body {
-      ${sansSerif}
-      font-size: ${fontSizes[1]};
-      line-height: 1.5;
+  body {
+    ${sansSerif}
+    ${fontSizes[1]};
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    ${headingMargins}
+  }
+
+  h1 {
+    ${fontSizes[4]}
+    line-height: 1;
+  }
+
+  h2 {
+    ${fontSizes[3]};
+    line-height: 1.25;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+    border-bottom: 2pt solid;
+    padding-bottom: 0.1em;
+    transition: background-color 0.3s;
+
+    :hover {
+      background-color: rgba(0, 0, 0, 0.1);
     }
 
-    h1,
-    h2,
-    h3 {
-      ${headingMargins}
+    :visited {
+      opacity: 0.6;
     }
-
-    h1 {
-      ${fontSizes[4]}
-      line-height: 1;
-    }
-
-    h2 {
-      ${fontSizes[3]};
-      line-height: 1.25;
-    }
-    
-    a {
-      text-decoration: none;
-      color: inherit;
-      background-color: transparent;
-      border-bottom: 2pt solid;
-      padding-bottom: 0.1em;
-      transition: background-color 0.3s;
-
-      :hover {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      :visited {
-        opacity: 0.6;
-      }
-    }
+  }
 `;
 
 export const Small = styled.small`
