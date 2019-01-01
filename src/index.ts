@@ -4,16 +4,26 @@ import * as ReactDOMServer from "react-dom/server";
 import * as fs from "fs";
 import * as path from "path";
 import * as mkdirp from "mkdirp";
+import * as dotenv from "dotenv";
 
 import generateHtml from "./helpers/generateHtml";
 import App from "./App";
 
+dotenv.config();
+
+// initialize client params
+let clientParams: Contentful.CreateClientParams = {
+  space: process.env.CONTENTFUL_SPACE,
+  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN
+};
+// if this is dev, use the preview token and host
+if (process.env.NODE_ENV === "development") {
+  clientParams.accessToken = process.env.CONTENTFUL_PREVIEW_TOKEN;
+  clientParams.host = "preview.contentful.com";
+  console.log(clientParams);
+}
 // initialize Contentful client
-const client = Contentful.createClient({
-  space: "yf1oyadbtzfa",
-  accessToken: "17aa7d1318523a90b15310571fdf467fb16049a2d4eaa9aa1bcca9bfc88d2b18"
-  // host: "preview.contentful.com"
-});
+const client = Contentful.createClient(clientParams);
 
 console.log("ℹ️ Fetching Data...");
 
@@ -44,7 +54,6 @@ function savePageToDisk(location: string, html: string) {
   // public path is one above
   const locationPath = path.join(__dirname, "..", `public${location}`);
   const pathExists = fs.existsSync(locationPath);
-  console.log({ locationPath, pathExists });
   // if the path doesn't exist, create it
   if (pathExists === false) {
     mkdirp.sync(locationPath);
