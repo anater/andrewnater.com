@@ -14,19 +14,8 @@ const sansSerif = css`
     "Segoe UI Emoji", "Segoe UI Symbol";
 `;
 
-const fadeIn = keyframes`
-  from, to {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-`;
-
 export const GlobalStyles = css`
   html {
-    height: 100%;
     background: linear-gradient(to bottom right, #262362, #41bfaf);
   }
 
@@ -35,6 +24,8 @@ export const GlobalStyles = css`
     ${fontSizes[1]};
     line-height: 1.5;
     color: rgba(255, 250, 250, 1);
+    margin: 0;
+    min-height: 100vh;
   }
 
   h1,

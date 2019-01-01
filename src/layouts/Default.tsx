@@ -24,7 +24,7 @@ const Main = styled.main`
 `;
 
 const Header = styled.header`
-  margin: 3rem 0;
+  padding: 3rem 0;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -38,7 +38,7 @@ const Header = styled.header`
 `;
 
 const Footer = styled.footer`
-  margin: 4rem 0;
+  padding: 4rem 0;
   text-align: center;
 `;
 
