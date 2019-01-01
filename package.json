@@ -1,14 +1,47 @@
 {
   "name": "andrewnater.com",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "scripts": {
+    "wacth": "tsc -w",
+    "start": "tsc && node dist/index",
+    "serve": "npm start && http-server public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://anater@github.com/anater/anater.github.io.git"
+  },
+  "author": "Andrew Nater",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/anater/anater.github.io/issues"
+  },
+  "homepage": "https://github.com/anater/anater.github.io#readme",
+  "dependencies": {
+    "@emotion/core": "^10.0.5",
+    "@emotion/styled": "^10.0.5",
+    "cheerio": "^1.0.0-rc.2",
+    "contentful": "^7.0.5",
+    "date-fns": "^1.30.1",
+    "dotenv": "^6.2.0",
+    "markdown-it": "^8.4.2",
+    "mkdirp": "^0.5.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-helmet": "^5.2.0",
+    "typescript": "^3.2.2"
+  },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-autoprefixer": "^3.0.1",
-    "load-grunt-tasks": "~0.6.0",
-    "grunt-concurrent": "^2.0.3",
-    "grunt-contrib-cssmin": "^0.12.3",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-sass": "^1.1.0-beta",
-    "grunt-shell": "^1.1.2"
+    "@types/cheerio": "^0.22.10",
+    "@types/dotenv": "^6.1.0",
+    "@types/markdown-it": "0.0.7",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-helmet": "^5.0.7"
   }
 }
