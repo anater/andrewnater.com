@@ -7,14 +7,15 @@ import { format } from "date-fns";
 import { Small, GlobalStyles } from "../components/Styled";
 import Markdown from "../components/Markdown";
 
-interface Props {
+interface Layout {
   content: Array<ContentItem>;
-  type: String;
+  type: string;
 }
 
 interface ContentItem {
   sys: Contentful.Sys;
   fields: any;
+  type: string;
 }
 
 const Main = styled.main`
@@ -42,71 +43,33 @@ const Footer = styled.footer`
   text-align: center;
 `;
 
-export default class Default extends React.PureComponent<Props> {
-  render() {
-    const { content } = this.props;
-    const date = new Date();
-    const year = date.getFullYear();
+export default function Default({ content, type }: Layout) {
+  const date = new Date();
+  const year = date.getFullYear();
 
-    return (
-      <>
-        <Global styles={GlobalStyles} />
-        <Main>
-          <Header>
-            <Small>Andrew Nater</Small>
-            <nav>
-              <a href="/" title="Go to the homepage">
-                🏠
-              </a>
-            </nav>
-          </Header>
-          {content.length > 0 && content.map(this.renderContentItem)}
-          <Footer>
-            <Small>Copyright Andrew Nater {year}</Small>
-          </Footer>
-        </Main>
-      </>
-    );
-  }
+  return (
+    <>
+      <Global styles={GlobalStyles} />
+      <Main>
+        <Header>
+          <Small>Andrew Nater</Small>
+          <nav>
+            <a href="/" title="Go to the homepage">
+              🏠
+            </a>
+          </nav>
+        </Header>
+        {content.length > 0 && content.map(item => <ContentItem {...item} type={type} />)}
+        <Footer>
+          <Small>Copyright Andrew Nater {year}</Small>
+        </Footer>
+      </Main>
+    </>
+  );
+}
 
-  renderContentItem = ({ sys, fields }: ContentItem) => {
-    const { id, contentType } = sys;
-    const type = contentType.sys.id;
-
-    switch (type) {
-      case "text":
-        // render text
-        return (
-          <section key={id}>
-            {fields.showTitle && <h1>{fields.title}</h1>}
-            {this.props.type === "Post" && this.getDate(sys)}
-            <Markdown content={fields.body} />
-          </section>
-        );
-      case "group":
-        // render group
-        return (
-          <section key={id}>
-            {fields.showTitle && <h1>{fields.title}</h1>}
-            {fields.items && fields.items.map(this.renderContentItem)}
-          </section>
-        );
-      case "page":
-        // render page
-        return (
-          <section key={id}>
-            <h2>
-              <a href={fields.slug}>{fields.title}</a>
-            </h2>
-            <p>{fields.description}</p>
-          </section>
-        );
-      default:
-        return false;
-    }
-  };
-
-  getDate = (sys: Contentful.Sys) => {
+function ContentItem({ sys, fields, type }: ContentItem) {
+  const getDate = (sys: Contentful.Sys) => {
     const { createdAt } = sys;
     const formattedDate = format(createdAt, "MMMM D, YYYY");
     return (
@@ -115,4 +78,38 @@ export default class Default extends React.PureComponent<Props> {
       </Small>
     );
   };
+
+  const { id, contentType } = sys;
+
+  switch (contentType.sys.id) {
+    case "text":
+      // render text
+      return (
+        <section key={id}>
+          {fields.showTitle && <h1>{fields.title}</h1>}
+          {type === "Post" && getDate(sys)}
+          <Markdown content={fields.body} />
+        </section>
+      );
+    case "group":
+      // render group
+      return (
+        <section key={id}>
+          {fields.showTitle && <h1>{fields.title}</h1>}
+          {fields.items && fields.items.map(this.renderContentItem)}
+        </section>
+      );
+    case "page":
+      // render page
+      return (
+        <section key={id}>
+          <h2>
+            <a href={fields.slug}>{fields.title}</a>
+          </h2>
+          <p>{fields.description}</p>
+        </section>
+      );
+    default:
+      return null;
+  }
 }
