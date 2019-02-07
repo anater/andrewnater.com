@@ -96,7 +96,7 @@ function ContentItem({ sys, fields, type }: ContentItem) {
       return (
         <section key={id}>
           {fields.showTitle && <h1>{fields.title}</h1>}
-          {fields.items && fields.items.map(this.renderContentItem)}
+          {fields.items && fields.items.map((item: ContentItem) => <ContentItem type={type} {...item} />)}
         </section>
       );
     case "page":
