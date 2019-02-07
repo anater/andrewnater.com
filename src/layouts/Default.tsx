@@ -59,7 +59,7 @@ export default function Default({ content, type }: Layout) {
             </a>
           </nav>
         </Header>
-        {content.length > 0 && content.map(item => <ContentItem {...item} type={type} />)}
+        {content.length > 0 && content.map(item => <ContentItem key={item.sys.id} {...item} type={type} />)}
         <Footer>
           <Small>Copyright Andrew Nater {year}</Small>
         </Footer>
@@ -96,7 +96,8 @@ function ContentItem({ sys, fields, type }: ContentItem) {
       return (
         <section key={id}>
           {fields.showTitle && <h1>{fields.title}</h1>}
-          {fields.items && fields.items.map((item: ContentItem) => <ContentItem type={type} {...item} />)}
+          {fields.items &&
+            fields.items.map((item: ContentItem) => <ContentItem key={item.sys.id} {...item} type={type} />)}
         </section>
       );
     case "page":
