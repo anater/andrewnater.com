@@ -3,25 +3,21 @@ import { Helmet } from "react-helmet";
 
 import Default from "./layouts/Default";
 
-export default class App extends React.PureComponent<any> {
-  render() {
-    return (
-      <>
-        {this.renderHeader()}
-        {this.renderPage()}
-      </>
-    );
-  }
+interface Page {
+  title: string;
+  type: string;
+  content: Array<any>;
+  description: string;
+}
 
-  renderHeader = () => (
-    <Helmet>
-      <title>{this.props.title}</title>
-      <meta name="description" content={this.props.description} />
-    </Helmet>
+export default function App({ title, type, content, description }: Page) {
+  return (
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <Default type={type} content={content} />
+    </>
   );
-
-  renderPage = () => {
-    const { type, content } = this.props;
-    return <Default type={type} content={content} />;
-  };
 }
