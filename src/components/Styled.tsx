@@ -64,6 +64,13 @@ export const GlobalStyles = css`
       opacity: 0.6;
     }
   }
+
+  pre {
+    overflow-x: scroll;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+  }
 `;
 
 export const Small = styled.small`
