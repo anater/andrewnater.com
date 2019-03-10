@@ -21,8 +21,8 @@ export const GlobalStyles = css`
 
   body {
     ${sansSerif}
-    ${fontSizes[1]};
-    line-height: 1.5;
+    ${fontSizes[1]}
+    line-height: 1.6;
     color: rgba(255, 250, 250, 1);
     margin: 0;
     min-height: 100vh;
@@ -65,11 +65,37 @@ export const GlobalStyles = css`
     }
   }
 
+  p code,
+  li code {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 0.25em;
+    border-radius: 0.25em;
+  }
+
   pre {
     overflow-x: scroll;
-    padding: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 0.5rem;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5em;
+  }
+
+  .hljs {
+    &-keyword,
+    &-type,
+    &-built_in {
+      color: palegreen;
+    }
+    &-string,
+    &-number,
+    &-literal,
+    &-symbol,
+    &-class {
+      color: lightskyblue;
+    }
+    &-comment {
+      opacity: 0.5;
+      font-style: italic;
+    }
   }
 `;
 

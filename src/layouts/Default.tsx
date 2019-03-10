@@ -20,7 +20,7 @@ interface ContentItem {
 
 const Main = styled.main`
   width: 90%;
-  max-width: 34em;
+  max-width: 40em;
   margin: 0 auto;
 `;
 
