@@ -65,6 +65,10 @@ export const GlobalStyles = css`
     }
   }
 
+  ul {
+    padding-left: 1em;
+  }
+
   p code,
   li code {
     background-color: rgba(0, 0, 0, 0.25);
@@ -73,23 +77,31 @@ export const GlobalStyles = css`
   }
 
   pre {
+    max-width: 100%;
     overflow-x: scroll;
     padding: 0.5em;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.5em;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   .hljs {
     &-keyword,
     &-type,
-    &-built_in {
+    &-built_in,
+    &-name,
+    &-attribute {
       color: palegreen;
     }
     &-string,
     &-number,
     &-literal,
     &-symbol,
-    &-class {
+    &-class,
+    &-selector-tag {
       color: lightskyblue;
     }
     &-comment {
