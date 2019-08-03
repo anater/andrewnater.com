@@ -16,7 +16,7 @@ const sansSerif = css`
 
 export const GlobalStyles = css`
   html {
-    background: linear-gradient(to bottom right, #262362, #41bfaf);
+    background: linear-gradient(to bottom right,#CF5053,#364EAC);
   }
 
   body {
@@ -94,7 +94,7 @@ export const GlobalStyles = css`
     &-built_in,
     &-name,
     &-attribute {
-      color: palegreen;
+      color: #df8882;
     }
     &-string,
     &-number,
@@ -102,7 +102,7 @@ export const GlobalStyles = css`
     &-symbol,
     &-class,
     &-selector-tag {
-      color: lightskyblue;
+      color: #8d8aea;
     }
     &-comment {
       opacity: 0.5;
