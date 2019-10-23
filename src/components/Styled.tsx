@@ -16,7 +16,7 @@ const sansSerif = css`
 
 export const GlobalStyles = css`
   html {
-    background: linear-gradient(to bottom right,#CF5053,#000000);
+    background: linear-gradient(to bottom right,#000000,#364EAC);
   }
 
   body {
