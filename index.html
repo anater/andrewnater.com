@@ -29,10 +29,6 @@
   <link rel="manifest" href="/site.webmanifest">
 </head>
 
-<script>
-  const invertTheme = () => document.body.classList.toggle(`invert-theme`)
-</script>
-
 <body>
   <main>
     <h1>
@@ -82,7 +78,8 @@
     </footer>
   </main>
 
-  <button id="theme-button" aria-label="Invert Theme" onclick=invertTheme()></button>
+  <button id="theme-button" aria-label="Invert Theme" onclick='document.body.classList.toggle(`invert-theme`)'>
+  </button>
 </body>
 
 <style>
@@ -155,7 +152,14 @@
     padding: 5%;
     position: relative;
     color: var(--primary-color);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
     background: linear-gradient(180deg, var(--primary-color), var(--bg1-color));
+    z-index: -1;
   }
 
   main {
