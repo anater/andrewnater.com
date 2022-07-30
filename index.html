@@ -29,6 +29,10 @@
   <link rel="manifest" href="/site.webmanifest">
 </head>
 
+<script>
+  const invertTheme = () => document.body.classList.toggle(`invert-theme`)
+</script>
+
 <body>
   <main>
     <h1>
@@ -44,12 +48,12 @@
       <strong>Let’s discuss how I can help your team build better software.</strong>
     </p>
     <footer>
-      <button tabindex=-1>
+      <button class="primary" tabindex=-1>
         <a href="mailto:a.a.nater@gmail.com">
           Email
         </a>
       </button>
-      <button style="margin-right: auto" tabindex=-1>
+      <button class="primary" style="margin-right: auto" tabindex=-1>
         <a href="/assets/andrew-nater-resume-2022.pdf" download>
           Résumé
         </a>
@@ -77,12 +81,39 @@
       </small>
     </footer>
   </main>
+
+  <button id="theme-button" aria-label="Invert Theme" onclick=invertTheme()></button>
 </body>
 
 <style>
   :root {
     --primary-color: #573CFF;
     --seconday-color: #7D79FF;
+    --bg1-color: white;
+    --bg2-color: #F9F1FF;
+  }
+
+  .invert-theme {
+    --primary-color: #8A77FF;
+    --secondary-color: #6455AD;
+    --bg1-color: black;
+    --bg2-color: #2D2334;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #8A77FF;
+      --secondary-color: #6455AD;
+      --bg1-color: black;
+      --bg2-color: #2D2334;
+    }
+
+    .invert-theme {
+      --primary-color: #573CFF;
+      --seconday-color: #7D79FF;
+      --bg1-color: white;
+      --bg2-color: #F9F1FF;
+    }
   }
 
   @keyframes fadein {
@@ -124,12 +155,12 @@
     padding: 5%;
     position: relative;
     color: var(--primary-color);
-    background: linear-gradient(180deg, var(--primary-color) 0%, white 100%);
+    background: linear-gradient(180deg, var(--primary-color), var(--bg1-color));
   }
 
   main {
     --radius: 80px;
-    background: linear-gradient(180deg, white 100%, #F9F1FF 100%);
+    background: linear-gradient(180deg, var(--bg1-color), var(--bg2-color));
     border-radius: var(--radius) 0px;
     padding: var(--radius) 5% calc(var(--radius) / 2);
     max-width: 60ch;
@@ -164,7 +195,17 @@
     letter-spacing: -0.02em;
   }
 
-  button {
+  button:hover,
+  button:focus-within {
+    transform: scale(1.1) rotate(1deg);
+  }
+
+  button:focus-within {
+    outline: auto;
+    outline-color: var(--seconday-color);
+  }
+
+  button.primary {
     position: relative;
     background: var(--primary-color);
     color: white;
@@ -180,17 +221,7 @@
     transition: 200ms transform ease-out;
   }
 
-  button:hover,
-  button:focus-within {
-    transform: scale(1.1) rotate(1deg);
-  }
-
-  button:focus-within {
-    outline: auto;
-    outline-color: var(--seconday-color);
-  }
-
-  button::before {
+  button.primary::before {
     content: '';
     display: block;
     position: absolute;
@@ -201,7 +232,7 @@
     pointer-events: none;
   }
 
-  button>a {
+  button.primary>a {
     display: block;
     text-decoration: none;
     color: inherit;
@@ -240,6 +271,51 @@
     margin: auto;
     width: 100%;
     text-align: center;
+    color: var(--secondary-color);
+  }
+
+  #theme-button {
+    all: unset;
+    position: fixed;
+    padding: 1em;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 150ms ease-out;
+  }
+
+  #theme-button:hover,
+  #theme-button:focus {
+    transform: scale(1.2);
+  }
+
+  #theme-button:active {
+    transform: scale(0.8);
+  }
+
+  #theme-button:focus-within {
+    outline: auto;
+  }
+
+  #theme-button::before {
+    all: unset;
+    content: '🌙';
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .invert-theme #theme-button::before {
+    content: '☀️'
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #theme-button::before {
+      content: '☀️'
+    }
+
+    .invert-theme #theme-button::before {
+      content: '🌙';
+    }
   }
 </style>
 
