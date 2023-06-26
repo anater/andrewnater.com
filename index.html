@@ -40,21 +40,122 @@
 
 <body>
   <main>
-    <h1>
-      Hello! I'm Andrew Nater, <br /> I'm a full-stack engineer.
-    </h1>
+    <h1>Hi! I'm Andrew Nater, a seasoned full-stack engineer with a passion for
+      helping growing startups succeed.</h1>
 
-    <p>I help growing startups ship their best ideas to production fast!</p>
+    <p>
+      I specialize in developing web applications for startups building
+      healthcare technology. Whether you're developing innovative solutions for
+      patient care, medical records management, or prescription fulfillment,
+      I've got you covered.
+    </p>
 
-    <p>I have over a decade of experience building complex software for
-      startups, universities, and enterprises.</p>
+    <h2>What I Can Do For You</h2>
 
-    <p>I'm curious about AI in healthcare and education. I want to build
-      technology that improves and enriches our lives.</p>
+    <h3>Front-end Development and Testing</h3>
+
+    <p>
+      I excel at creating intuitive, responsive user interfaces using HTML, CSS,
+      Javascript and Typescript. I'm an expert in React, Jest, and Storybook. I
+      ensure your application looks great and performs flawlessly across
+      devices.
+    </p>
+
+    <h3>Continuous Integration and Deployment</h3>
+
+    <p>
+      I implement robust and efficient deployment processes, enabling seamless
+      updates and minimizing downtime. I've built CI/CD pipelines with CircleCI,
+      Github, and AWS.
+    </p>
+
+    <h3>Product Development Consulting</h3>
+
+    <p>
+      With my extensive experience in startups as a founder, manager, and
+      individual contributor, I offer valuable insights and guidance throughout
+      the product development lifecycle. I provide guidance on technical
+      direction and leadership as well as recruiting, hiring, and training
+      engineers.
+    </p>
+
+    <h2>What I've Built</h2>
+
+    <h3><a href="https://macos-tailwind.netlify.com/">macOS Tailwind</a></h3>
+
+    <p>
+      I'm actively developing a Storybook library of native macOS components
+      built with HTML, TailwindCSS, and Javascript
+    </p>
+
+    <h3><a href="https://kennel-ui.netlify.com/">Kennel 360</a></h3>
+
+    <p>
+      I led the development of the React front-end and Rails back-end of Kennel
+      360, a comprehensive platform that served as the central nervous system
+      for
+      Fuzzy's veterinary doctors, nurses, and support staff. The Storybook
+      library
+      was built with React, Redux, TailwindCSS, and Typescript
+    </p>
+
+    <h3><a href="https://getwellness.co">Wellness</a></h3>
+
+    <p>
+      I developed the API and website for Wellness, a mental health tracker for
+      iOS. Shutdown April 2020. The app was built with Swift, UIKit, and
+      Firebase.
+      Marketing website built with React, CSS, and Firebase Cloud Functions.
+    </p>
+
+    <h2>What I Bring to Every Job</h2>
+
+    <h3>Robust, Testable Code</h3>
+
+    <p>
+      I prioritize building reliable and maintainable code that stands the test
+      of
+      time. Quality is at the core of everything I do.
+    </p>
+
+    <h3>Informative Documentation</h3>
+
+    <p>
+      Clear and comprehensive documentation ensures smooth onboarding and
+      empowers
+      your team to understand and extend the software.
+    </p>
+
+    <h3>Experienced Consulting</h3>
+
+    <p>
+      I offer valuable guidance based on years of
+      experience leading engineers and building products at startups. I
+      understand the unique challenges and opportunities that startups in these
+      domains face.
+    </p>
+
+    <h3>Faster Product Development</h3>
+
+    <p>
+      With my expertise and efficient development processes, we can accelerate
+      your product development timeline, getting your solutions to market
+      faster.
+    </p>
+
+    <h2>What are you waiting for?</h2>
+
+    <p>
+      I'm a full-stack engineer with a deep understanding of
+      front-end development and experience developing software for startups.
+      I've been in your shoes and understand the challenges you face. I bring a
+      comprehensive skill set to the table, enabling me to tackle complex
+      technical problems while keeping your business goals in mind.
+    </p>
 
     <button class="primary" tabindex=-1>
       <a href="https://calendly.com/naterdev/meet">
-        Let's Meet 👋🏽
+        Schedule a Call
       </a>
     </button>
 
@@ -168,14 +269,7 @@
     padding: 5%;
     position: relative;
     color: var(--primary-color);
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(180deg, var(--primary-color), var(--bg1-color));
-    z-index: -1;
+    background: var(--bg1-color)
   }
 
   main {
@@ -183,11 +277,15 @@
     background: linear-gradient(180deg, var(--bg1-color), var(--bg2-color));
     border-radius: var(--radius) 0px;
     padding: var(--radius) 5% calc(var(--radius) / 2);
-    max-width: 60ch;
+    max-width: 80ch;
     margin: auto;
     box-sizing: content-box;
     animation-name: fadein, slidein;
     animation-duration: 1s;
+  }
+
+  main>*+* {
+    margin-top: 1.25em;
   }
 
   h1 {
@@ -198,24 +296,33 @@
     letter-spacing: -0.05em;
   }
 
+  h2 {
+    margin-top: 3em;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 100%;
+    text-transform: uppercase;
+  }
+
   p {
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 130%;
-    letter-spacing: -0.02em;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
     margin-top: 1em;
-  }
-
-  p+button {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    color: var(--seconday-color)
   }
 
   strong {
     font-style: italic;
     font-weight: 700;
     letter-spacing: -0.02em;
+  }
+
+  a {
+    color: inherit;
   }
 
   button:hover,
@@ -273,6 +380,7 @@
   }
 
   footer {
+    margin-top: 3rem;
     position: relative;
     display: flex;
     flex-wrap: wrap;
